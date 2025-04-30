@@ -61,16 +61,30 @@ After running the application, a Gradio web interface will launch. You can:
 
 ```
 KinBot/
-   ├── main.py                 # Main application code
-   ├── requirements.txt        # Dependencies
-   ├── README.md               # This file
-   ├── sample_audio/           # Example audio queries
-   │   ├── rwanda_coding_academy.wav
-   │   ├── umurwa_mukuru.wav
-   │   ├── muraho.wav
-   │   ├── witwa_nde.wav
-   │   └── ikoranabuhanga.wav
-   └── responses/              # Generated audio responses
+   ├── .gitignore
+   ├── .idea                                    # IDE Settings
+   ├── Dockerfile                               # Docker image condiguration
+   ├── README.md                                # This file
+   ├── pyproject.toml
+   ├── requirements.txt                         # Dependencies
+   └── src
+      └── v1
+            ├──responses/                       # Generated audio responses
+            ├── sample_audio/                   # Example audio queries
+            ├── main.py                         # Main application launcher
+            ├── asr
+               └── kinya_whisper.py
+            ├── example
+               ├── best.pt
+               ├── test.mp3
+               └── transcribe.py
+            ├── nlp
+               └── matcher.py
+            ├── tts
+               └── tts_engine.py
+            └── ui
+               └── gradio_ui.py
+
 ```
 
 ## Supported Questions
