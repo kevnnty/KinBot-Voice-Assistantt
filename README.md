@@ -1,10 +1,10 @@
-# Kinyabot - Kinyarwanda Voice Assistant
+# KinBot Voice Assistant
 
-This project implements a voice assistant that can understand and respond to queries in Kinyarwanda, simulating how a humanoid robot would interact with Rwandan communities.
+This is an educational project that implements a voice assistant that can respond to queries in Kinyarwanda, simulating how a humanoid robot would interact with Rwandans.
 
 ## Project Overview
 
-Kinyabot is a voice assistant that:
+KinBot is a voice assistant that:
 
 1. Listens to spoken Kinyarwanda questions
 2. Transcribes speech to text using KinyaWhisper
@@ -60,33 +60,28 @@ After running the application, a Gradio web interface will launch. You can:
 ## Project Structure
 
 ```
-kinyabot/
-├── main.py                 # Main application code
-├── requirements.txt        # Dependencies
-├── README.md               # This file
-├── sample_audio/           # Example audio queries
-│   ├── rwanda_coding_academy.wav
-│   ├── umurwa_mukuru.wav
-│   ├── muraho.wav
-│   ├── witwa_nde.wav
-│   └── tehgikiloji.wav
-└── responses/              # Generated audio responses
+KinBot/
+   ├── main.py                 # Main application code
+   ├── requirements.txt        # Dependencies
+   ├── README.md               # This file
+   ├── sample_audio/           # Example audio queries
+   │   ├── rwanda_coding_academy.wav
+   │   ├── umurwa_mukuru.wav
+   │   ├── muraho.wav
+   │   ├── witwa_nde.wav
+   │   └── ikoranabuhanga.wav
+   └── responses/              # Generated audio responses
 ```
 
 ## Supported Questions
 
-The system currently supports these questions (and their variations):
+The system currently supports these questions:
 
 1. "Rwanda Coding Academy iherereye he?" (Where is Rwanda Coding Academy located?)
 2. "Umurwa mukuru w'u Rwanda ni uwuhe?" (What is the capital of Rwanda?)
 3. "U Rwanda rufite imirenge ingahe?" (How many sectors does Rwanda have?)
-4. "Ikinyarwanda ni ururimi ruvugwa na bangahe?" (How many people speak Kinyarwanda?)
-5. "Tehgikiloji ni iki?" (What is technology?)
-6. "Mutangire mwirirwe" (Good afternoon)
-7. "Muraho" (Hello)
-8. "Witwa nde?" (What is your name?)
-9. "Ni gute wumva ikinyarwanda?" (How do you understand Kinyarwanda?)
-10. "Urakoze" (Thank you)
+4. "Witwa nde?" (What is your name?)
+5. "Ni gute wumva ikinyarwanda?" (How do you understand Kinyarwanda?)
 
 ## How It Works
 
@@ -98,29 +93,27 @@ The system currently supports these questions (and their variations):
 2. **Question Matching**:
 
    - The transcribed text is normalized and matched against known questions
-   - Both exact and partial matching are supported
 
 3. **Answer Generation**:
 
    - Pre-defined answers are retrieved based on matched questions
-   - A default response is provided if no match is found
 
 4. **Text-to-Speech**:
-   - The answer is converted to speech using gTTS with Kinyarwanda language
+   - The answer is converted to speech using
    - The audio response is played back
 
 ## Extending the System
 
 To add more questions and answers:
 
-1. Edit the `get_qa_pairs()` function in `main.py`
+1. Edit the `qa_dictionary` function in `nlp/matcher.py`
 2. Add new question-answer pairs to the dictionary
 3. Use lowercase for questions to improve matching
 
 ## Limitations
 
-- KinyaWhisper has limited accuracy for certain dialects and accents
-- The NLP matching is simple and may not handle complex variations
+- KinyaWhisper is a very minimal model and has limited accuracy for certain dialects and accents
+- The NLP matching is very simple and may not handle any complex variations
 - gTTS for Kinyarwanda has some pronunciation limitations
 
 ## Future Improvements

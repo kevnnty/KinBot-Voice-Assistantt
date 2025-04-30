@@ -9,5 +9,5 @@ def process(audio_file):
     return text, answer
 
 if __name__ == "__main__":
-    from interface.ui_gradio import launch_interface
+    from src.v1.ui.gradio_ui import launch_interface
     launch_interface(process)

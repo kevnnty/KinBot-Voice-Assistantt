@@ -1,4 +1,4 @@
-qa = {
+qa_dictionary = {
     "rwanda coding academy iherereye he": "Iherereye mu Karere ka Nyabihu, mu Ntara y’Iburengerazuba.",
     "umurwa mukuru w’u rwanda ni uwuhe": "Ni Kigali.",
     "ni ryari u rwanda rwabonye ubwigenge": "Ku itariki ya 1 Nyakanga 1962.",
@@ -8,4 +8,4 @@ qa = {
 
 def get_answer(transcription):
     transcription = transcription.strip().lower()
-    return qa.get(transcription, "Ntabwo nasanze igisubizo cyihariye.")
+    return qa_dictionary.get(transcription, "Ntabwo nasanze igisubizo cyihariye.")
